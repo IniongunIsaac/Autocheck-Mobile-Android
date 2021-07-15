@@ -1,0 +1,42 @@
+apply from: rootProject.file('android-modules-common-config.gradle')
+
+android {
+
+    defaultConfig {
+        buildConfigField("String", "INVENTORY_NAV_INTENT", NavIntents.inventory)
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    buildFeatures {
+        dataBinding = true
+    }
+
+}
+
+dependencies {
+    implementation(
+            Dependencies.constraintLayout,
+            Dependencies.appCompat,
+            Dependencies.materialDesign,
+
+            Dependencies.navFragmentKts,
+            Dependencies.navUIKts,
+
+            Dependencies.coroutines,
+            Dependencies.coroutinesAndroid,
+
+            Dependencies.rxJava,
+            Dependencies.rxAndroid,
+            Dependencies.retrofit,
+            Dependencies.gson,
+            Dependencies.fresco,
+
+            Dependencies.dagger,
+            Dependencies.daggerAndroidSupport,
+
+            Dependencies.threeTenAndroidBackport
+    )
+}

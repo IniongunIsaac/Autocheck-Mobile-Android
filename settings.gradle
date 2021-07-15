@@ -1,0 +1,7 @@
+include ':inventory'
+include ':common'
+include ':remotedatasource'
+include ':repository'
+include ':entities'
+include ':app'
+rootProject.name = "Autocheck Mobile"

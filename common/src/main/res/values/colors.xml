@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <color name="colorPrimary">#3B81FF</color>
+    <color name="colorPrimaryDark">#CB3B81FF</color>
+    <color name="colorAccent">#F68C04</color>
+    <color name="colorPrimaryLight">#34135ED1</color>
+
+    <!--    Override Material TextInputLayout Default Border Color-->
+    <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">@color/colorPrimary</color>
+
+    <color name="faint_text_color">#6D7278</color>
+    <color name="black">#000</color>
+    <color name="white">#fff</color>
+
+    <color name="red">#E57373</color>
+    <color name="warning">#ffc107</color>
+    <color name="yellow">#FCC038</color>
+    <color name="faint_separator_color">#ECECEC</color>
+
+<!--    <color name="splash_bg_color">#0E0B20</color>-->
+    <color name="splash_bg_color">#302C47</color>
+    <color name="app_bg">#F2F2F4</color>
+    <color name="edittext_content_bg">#F5F9FF</color>
+    <color name="textColorPrimary">@color/black</color>
+    <color name="textColorPrimaryAttr">?android:attr/textColorPrimary</color>
+    <color name="colorBackgroundDark">#121212</color>
+    <color name="transparent">@android:color/transparent</color>
+    <color name="card_bg">@color/white</color>
+    <color name="app_green">#70D498</color>
+
+</resources>

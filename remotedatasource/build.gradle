@@ -1,0 +1,35 @@
+apply from: rootProject.file('android-modules-common-config.gradle')
+
+android {
+
+    defaultConfig {
+
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+}
+
+dependencies {
+
+    implementation(
+            Dependencies.javax,
+            Dependencies.javaxAnnotation,
+            Dependencies.okhttp,
+            Dependencies.okhttpLoggingInterceptor,
+            Dependencies.retrofit,
+            Dependencies.rxJava,
+            Dependencies.retrofitRxJavaAdapter,
+            Dependencies.retrofitGsonConverter,
+            Dependencies.dagger,
+
+            project(Modules.repository)
+    )
+
+    kapt(
+            Dependencies.daggerCompiler
+    )
+
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string name="onboarding_title_1">Explore</string>
+    <string name="onboarding_title_2"> Delivery Happiness</string>
+    <string name="onboarding_title_3">Find a Dish</string>
+    <string name="onboarding_description_1">Enjoy and explore variety of exquisite cuisine.</string>
+    <string name="onboarding_description_2">Sit back and relax while your order gets delivered to your doorstep.</string>
+    <string name="onboarding_description_3">Find your desired dish on our platform from a vast array of choices.</string>
+
+</resources>

@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.Dark" parent="Theme.MaterialComponents">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!-- For Android sdk versions 26+. -->
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_regular</item>
+        <!-- Target Android sdk versions < 26 and > 14. -->
+        <item name="fontFamily">@font/nunito_regular</item>
+    </style>
+
+    <style name="AppTheme.FullScreen" parent="AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/app_text_size</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:fontFamily">@font/nunito_regular</item>
+    </style>
+
+    <style name="AppText.Header" parent="AppText">
+        <item name="android:textSize">@dimen/app_large_text_size</item>
+        <item name="android:fontFamily">@font/nunito_bold</item>
+    </style>
+
+    <style name="AppText.SuperHeader" parent="AppText">
+        <item name="android:fontFamily">@font/nunito_extra_bold</item>
+        <item name="android:textSize">@dimen/app_super_large_text_size</item>
+    </style>
+
+    <style name="AppText.Light" parent="AppText">
+        <item name="android:fontFamily">@font/nunito_light</item>
+    </style>
+
+    <style name="AppText.Bold" parent="AppText">
+        <item name="android:fontFamily">@font/nunito_bold</item>
+    </style>
+
+    <style name="AppText.SemiBold" parent="AppText">
+        <item name="android:fontFamily">@font/nunito_semi_bold</item>
+    </style>
+
+    <style name="AppText.SuperHeader.Colored" parent="AppText.SuperHeader">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="AppText.Small" parent="AppText">
+        <item name="android:textSize">@dimen/app_small_text_size</item>
+    </style>
+
+    <style name="AppText.Small.Bold" parent="AppText">
+        <item name="android:fontFamily">@font/nunito_bold</item>
+        <item name="android:textSize">@dimen/app_small_text_size</item>
+    </style>
+
+    <style name="AppText.Small.Light" parent="AppText">
+        <item name="android:fontFamily">@font/nunito_light</item>
+        <item name="android:textSize">@dimen/app_small_text_size</item>
+    </style>
+
+    <style name="AppText.Small.GrayedOut" parent="AppText">
+        <item name="android:textSize">@dimen/app_small_text_size</item>
+        <item name="android:textColor">@color/faint_text_color</item>
+    </style>
+
+    <style name="AppText.Medium" parent="AppText">
+        <item name="android:textSize">@dimen/app_medium_text_size</item>
+    </style>
+
+    <style name="AppText.Style.Medium" parent="AppText">
+        <item name="android:textSize">@dimen/app_medium_text_size</item>
+        <item name="android:fontFamily">@font/nunito_semi_bold</item>
+    </style>
+
+    <style name="AppText.GrayedOut" parent="AppText">
+        <item name="android:textSize">@dimen/app_text_size</item>
+        <item name="android:textColor">@color/faint_text_color</item>
+    </style>
+
+    <style name="AppButton.Outlined" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/app_text_size</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:fontFamily">@font/nunito_regular</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="AppButton.Filled.Rounded" parent="Widget.MaterialComponents.Button">
+        <item name="android:textSize">@dimen/button_text_size</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">85dp</item>
+        <item name="cornerRadius">@dimen/button_corner_radius</item>
+        <item name="android:fontFamily">@font/nunito_bold</item>
+        <item name="rippleColor">@android:color/white</item>
+        <item name="android:colorBackground">@color/colorPrimary</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:paddingTop">@dimen/button_padding_top_bottom</item>
+        <item name="android:paddingBottom">@dimen/button_padding_top_bottom</item>
+        <item name="android:paddingStart">@dimen/button_padding_left_right</item>
+        <item name="android:paddingEnd">@dimen/button_padding_left_right</item>
+        <item name="android:paddingLeft">@dimen/button_padding_left_right</item>
+        <item name="android:paddingRight">@dimen/button_padding_left_right</item>
+        <item name="iconPadding">@dimen/button_icon_padding</item>
+        <item name="iconSize">@dimen/button_icon_size</item>
+    </style>
+
+    <style name="AppLoadingButton" parent="">
+        <item name="android:textSize">@dimen/button_text_size</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">85dp</item>
+        <item name="cornerRadius">@dimen/button_corner_radius</item>
+        <item name="android:fontFamily">@font/nunito_bold</item>
+        <item name="rippleColor">@android:color/white</item>
+        <item name="android:colorBackground">@color/colorPrimary</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="AppButton.Filled.SignInOption" parent="Widget.MaterialComponents.Button">
+        <item name="android:textSize">@dimen/button_text_size</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/nunito_bold</item>
+        <item name="rippleColor">@android:color/white</item>
+        <item name="android:colorBackground">@color/colorPrimary</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:paddingTop">@dimen/button_padding_top_bottom</item>
+        <item name="android:paddingBottom">@dimen/button_padding_top_bottom</item>
+        <item name="android:paddingStart">@dimen/button_padding_left_right</item>
+        <item name="android:paddingEnd">@dimen/button_padding_left_right</item>
+        <item name="android:paddingLeft">@dimen/button_padding_left_right</item>
+        <item name="android:paddingRight">@dimen/button_padding_left_right</item>
+        <item name="iconPadding">@dimen/button_icon_padding</item>
+        <item name="iconSize">@dimen/button_icon_size</item>
+    </style>
+
+    <style name="AppButton.Text" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textSize">@dimen/button_text_size</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:fontFamily">@font/nunito_regular</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="AppButton.Text.Bold" parent="AppButton.Text">
+        <item name="android:fontFamily">@font/nunito_bold</item>
+    </style>
+
+    <style name="AppButton.IconOnly" parent="Widget.MaterialComponents.Button">
+        <item name="iconPadding">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:paddingRight">12dp</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:minHeight">48dp</item>
+    </style>
+
+    <style name="TabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="AppChoiceChipStyle" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="android:fontFamily">@font/nunito_regular</item>
+    </style>
+
+    <style name="AppChoiceChipTextAppearance" parent="TextAppearance.MaterialComponents.Chip">
+        <item name="android:textSize">@dimen/app_text_size</item>
+        <item name="android:fontFamily">@font/nunito_regular</item>
+    </style>
+
+    <style name="AppTextInput.Outlined" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:fontFamily">@font/nunito_regular</item>
+        <item name="boxStrokeWidth">0.8dp</item>
+        <item name="boxStrokeWidthFocused">0.8dp</item>
+        <item name="boxStrokeColor">@color/colorPrimary</item>
+        <item name="boxBackgroundColor">@color/edittext_content_bg</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/app_text_input_radius</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/app_text_input_radius</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/app_text_input_radius</item>
+        <item name="boxCornerRadiusTopStart">@dimen/app_text_input_radius</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
+    <style name="AppDropDown" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu">
+        <item name="boxStrokeColor">@null</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="endIconDrawable">@drawable/ic_arrow_down</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/app_text_input_layout_radius</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/app_text_input_layout_radius</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/app_text_input_layout_radius</item>
+        <item name="boxCornerRadiusTopStart">@dimen/app_text_input_layout_radius</item>
+    </style>
+
+    <style name="AppDropDown.Outlined" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="boxStrokeColor">@null</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="endIconDrawable">@drawable/ic_arrow_down</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/app_text_input_layout_radius</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/app_text_input_layout_radius</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/app_text_input_layout_radius</item>
+        <item name="boxCornerRadiusTopStart">@dimen/app_text_input_layout_radius</item>
+    </style>
+
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/black</item>
+        <item name="colorControlActivated">@color/colorAccent</item>
+    </style>
+
+    <style name="RoundedImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/standard_mid_margin</item>
+    </style>
+
+    <style name="CircularImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/standard_content_margin_32</item>
+    </style>
+
+</resources>

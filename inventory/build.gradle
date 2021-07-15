@@ -1,0 +1,54 @@
+apply from: rootProject.file('android-modules-common-config.gradle')
+apply plugin: 'androidx.navigation.safeargs'
+
+android {
+
+    buildFeatures {
+        dataBinding = true
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    defaultConfig {
+        vectorDrawables.useSupportLibrary = true
+        manifestPlaceholders = [inventoryIntent: NavIntents.inventoryIntent]
+    }
+
+}
+
+dependencies {
+    implementation(
+            Dependencies.constraintLayout,
+            Dependencies.appCompat,
+            Dependencies.materialDesign,
+            Dependencies.androidXVectorDrawables,
+            Dependencies.androidXCoreKts,
+            Dependencies.navFragmentKts,
+            Dependencies.navUIKts,
+            Dependencies.navFragment,
+            Dependencies.navUI,
+            Dependencies.legacySupport,
+            Dependencies.lifecycleExt,
+            Dependencies.lifecycleViewModelKts,
+            Dependencies.viewPager,
+            Dependencies.timber,
+            Dependencies.fresco,
+
+            Dependencies.rxJava,
+            Dependencies.rxAndroid,
+
+            Dependencies.dagger,
+            Dependencies.daggerAndroidSupport,
+
+            project(Modules.repository),
+            project(Modules.entities),
+            project(Modules.common)
+    )
+
+    kapt(
+            Dependencies.daggerCompiler,
+            Dependencies.daggerAndroidProcessor
+    )
+}

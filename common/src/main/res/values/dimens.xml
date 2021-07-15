@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="app_text_size">14sp</dimen>
+    <dimen name="app_small_text_size">11sp</dimen>
+    <dimen name="app_medium_text_size">16sp</dimen>
+    <dimen name="app_big_text_size">18sp</dimen>
+    <dimen name="app_large_text_size">20sp</dimen>
+    <dimen name="app_super_large_text_size">24sp</dimen>
+    <dimen name="standard_content_margin">16dp</dimen>
+    <dimen name="standard_content_margin_32">32dp</dimen>
+    <dimen name="standard_content_margin_48">48dp</dimen>
+    <dimen name="standard_content_margin_24">24dp</dimen>
+    <dimen name="standard_content_margin_18">18dp</dimen>
+    <dimen name="standard_content_margin_12">12dp</dimen>
+    <dimen name="standard_mid_margin">8dp</dimen>
+    <dimen name="button_corner_radius">20dp</dimen>
+    <dimen name="indicator_width">40dp</dimen>
+    <dimen name="active_indicator_width">40dp</dimen>
+    <dimen name="indicator_height">5dp</dimen>
+    <dimen name="indicator_margin">10dp</dimen>
+    <dimen name="standard_elevation">5dp</dimen>
+
+    <dimen name="home_label_text_size">15sp</dimen>
+
+    <dimen name="button_text_size">14sp</dimen>
+    <dimen name="button_padding_top_bottom">12dp</dimen>
+    <dimen name="button_padding_left_right">25dp</dimen>
+    <dimen name="button_icon_padding">15dp</dimen>
+    <dimen name="button_icon_size">24dp</dimen>
+
+    <dimen name="app_text_input_radius">15dp</dimen>
+    <dimen name="app_text_input_layout_radius">10dp</dimen>
+    <dimen name="card_corner_radius">15dp</dimen>
+</resources>

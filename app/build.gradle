@@ -1,0 +1,145 @@
+apply plugin: 'com.android.application'
+apply plugin: 'androidx.navigation.safeargs'
+apply from: rootProject.file('android-modules-common-config.gradle')
+
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+android {
+
+    signingConfigs {
+        release {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile file(rootDir.getCanonicalPath() + '/' + keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
+        }
+    }
+
+    defaultConfig {
+
+        applicationId DepVersions.applicationId
+
+        vectorDrawables {
+            useSupportLibrary = true
+        }
+
+        multiDexEnabled true
+
+    }
+
+    buildTypes {
+
+        release {
+            //signingConfig signingConfigs.release
+
+            android.applicationVariants.all { variant ->
+                variant.outputs.all {
+                    outputFileName = "autocheck-mobile-${variant.name}-v${variant.versionName}.apk"
+                }
+            }
+        }
+
+        debug {
+            versionNameSuffix "-debug"
+            //applicationIdSuffix ".debug"
+
+            //signingConfig signingConfigs.release
+
+        }
+    }
+
+    flavorDimensions "release"
+
+    productFlavors {
+        dev {
+            buildConfigField "String", "BASE_URL", "\"https://api.staging.myautochek.com/v1/inventory/\""
+
+            applicationIdSuffix ".dev"
+            dimension "release"
+        }
+        staging {
+            buildConfigField "String", "BASE_URL", "\"https://api.staging.myautochek.com/v1/inventory/\""
+
+            applicationIdSuffix ".staging"
+            dimension "release"
+        }
+        prod {
+            buildConfigField "String", "BASE_URL", "\"https://api.staging.myautochek.com/v1/inventory/\""
+
+            dimension "release"
+        }
+    }
+
+    buildFeatures {
+        dataBinding = true
+    }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE.md'
+        exclude 'META-INF/LICENSE-notice.md'
+    }
+
+}
+
+dependencies {
+
+    implementation(
+            Dependencies.appCompat,
+            Dependencies.constraintLayout,
+            Dependencies.navFragmentKts,
+            Dependencies.navUIKts,
+            Dependencies.navFragment,
+            Dependencies.navUI,
+
+            Dependencies.coroutines,
+            Dependencies.coroutinesAndroid,
+
+            Dependencies.materialDesign,
+
+            Dependencies.threeTenAndroidBackport,
+            Dependencies.fresco,
+
+            Dependencies.rxAndroid,
+
+            Dependencies.gson,
+            Dependencies.okhttpLoggingInterceptor,
+            Dependencies.retrofitGsonConverter,
+            Dependencies.retrofitRxJavaAdapter,
+
+            Dependencies.commonsText,
+
+            Dependencies.multiDex,
+
+            Dependencies.dagger,
+            Dependencies.daggerAndroidSupport,
+
+            project(Modules.remotedatasource),
+            project(Modules.repository),
+            project(Modules.common),
+            project(Modules.inventory)
+    )
+
+    kapt(
+            Dependencies.daggerAndroidProcessor,
+            Dependencies.daggerCompiler
+    )
+
+    testImplementation(
+            Dependencies.androidXTestCore,
+            Dependencies.androidXTestCoreKtx,
+            Dependencies.androidXArchCoreTesting,
+            Dependencies.androidXJunitExtension
+    )
+
+    androidTestImplementation(
+            Dependencies.espresso,
+            Dependencies.espressoContrib
+    )
+
+}
