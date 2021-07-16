@@ -1,6 +1,7 @@
 package com.iniongungroup.mobile.droid.autocheckmobile.presentation
 
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatDelegate
 import com.iniongungroup.mobile.droid.autocheckmobile.BR
 import com.iniongungroup.mobile.droid.autocheckmobile.R
 import com.iniongungroup.mobile.droid.autocheckmobile.common.base.BaseActivity
@@ -25,6 +26,7 @@ class StartActivity : BaseActivity<StartActivityBinding, StartActivityViewModel>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         hideStatusAndNavigationBar()
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
     }
 
     override fun setViewModelObservers() {

@@ -13,6 +13,7 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
 import com.facebook.drawee.view.SimpleDraweeView
+import com.iniongungroup.mobile.droid.autocheckmobile.common.utils.formatted
 
 @BindingAdapter("app:image")
 fun setImage(imageView: AppCompatImageView, @DrawableRes imageRes: Int) {
@@ -34,6 +35,16 @@ fun setText(textView: AppCompatTextView, text: String) {
     textView.text = text
 }
 
+@BindingAdapter("app:text")
+fun setText(textView: TextView, value: Int) {
+    textView.text = "$value"
+}
+
+@BindingAdapter("app:text")
+fun setText(textView: TextView, value: Double?) {
+    textView.text = "${value?.formatted() ?: 0.0}"
+}
+
 @BindingAdapter("viewVisibility")
 fun setViewVisibility(view : View, visible : Boolean) {
     view.visibility = if (visible) VISIBLE else INVISIBLE
@@ -53,4 +64,10 @@ fun TextView.setImageDrawable(icon: Drawable, position: Int) {
 fun TextView.setStrikeThroughText(textString: String) {
     text = textString
     paintFlags = paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
+}
+
+@BindingAdapter("strikeThrough")
+fun TextView.setStrikeThrough(strikeThrough: Boolean) {
+    if (strikeThrough)
+        paintFlags = paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
 }

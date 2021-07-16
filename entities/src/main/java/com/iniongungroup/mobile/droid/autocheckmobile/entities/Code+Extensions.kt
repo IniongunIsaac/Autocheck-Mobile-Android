@@ -7,5 +7,5 @@ fun Number.currencyFormatted(): String {
     val format = NumberFormat.getCurrencyInstance()
     format.maximumFractionDigits = 0
     format.currency = Currency.getInstance("NGN")
-    return format.format(this).replace("NGN", "")
+    return format.format(this).replace("NGN", "₦")
 }

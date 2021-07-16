@@ -62,7 +62,9 @@
             app:layout_constraintStart_toStartOf="@id/startGuideline"
             app:layout_constraintEnd_toEndOf="@+id/endGuideline"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginTop="@dimen/standard_content_margin">
+            android:layout_marginTop="@dimen/standard_content_margin"
+            android:scrollbars="none"
+            android:layout_marginBottom="@dimen/standard_content_margin_24">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -134,14 +136,397 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:cardCornerRadius="15dp"
-                    android:layout_marginTop="@dimen/standard_content_margin_32">
+                    android:layout_marginTop="@dimen/standard_content_margin_32"
+                    android:layout_marginBottom="@dimen/standard_mid_margin">
 
-                    <TextView
-                        android:id="@+id/detailsTextView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/standard_content_margin_24"
-                        tools:text="@string/lorem"/>
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/standard_content_margin_24">
+
+                        <TextView
+                            android:id="@+id/sellingPriceLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Selling Price:"
+                            style="@style/AppText.SemiBold"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/sellingPriceTextView"/>
+
+                        <TextView
+                            android:id="@+id/sellingPriceTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toEndOf="@id/sellingPriceLabel"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/sellingPriceLabel"
+                            app:layout_constraintBottom_toBottomOf="@id/sellingPriceLabel"
+                            tools:text="#2,0000,000"
+                            style="@style/AppText.Header"
+                            android:textColor="@color/red"
+                            android:layout_marginStart="@dimen/standard_content_margin"/>
+
+                        <TextView
+                            android:id="@+id/marketPriceLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Market Price:"
+                            style="@style/AppText.SemiBold"
+                            app:layout_constraintTop_toBottomOf="@id/sellingPriceTextView"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/marketPriceTextView"
+                            android:layout_marginTop="@dimen/standard_mid_margin"/>
+
+                        <TextView
+                            android:id="@+id/marketPriceTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toEndOf="@id/marketPriceLabel"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/marketPriceLabel"
+                            app:layout_constraintBottom_toBottomOf="@id/marketPriceLabel"
+                            tools:text="#2,0000,000"
+                            strikeThrough="@{ true }"
+                            style="@style/AppText.Header"
+                            android:layout_marginStart="@dimen/standard_content_margin"/>
+
+                        <TextView
+                            android:id="@+id/installmentLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Installment Fee:"
+                            style="@style/AppText.SemiBold"
+                            app:layout_constraintTop_toBottomOf="@id/marketPriceTextView"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/installmentTextView"
+                            android:layout_marginTop="@dimen/standard_mid_margin"/>
+
+                        <TextView
+                            android:id="@+id/installmentTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toEndOf="@id/installmentLabel"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/installmentLabel"
+                            app:layout_constraintBottom_toBottomOf="@id/installmentLabel"
+                            tools:text="#2,0000,000"
+                            style="@style/AppText.Bold"
+                            android:textSize="17sp"
+                            android:layout_marginStart="@dimen/standard_content_margin"/>
+
+                        <TextView
+                            android:id="@+id/yearLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Year:"
+                            style="@style/AppText.SemiBold"
+                            app:layout_constraintTop_toBottomOf="@id/installmentTextView"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/yearTextView"
+                            android:layout_marginTop="@dimen/standard_mid_margin"/>
+
+                        <TextView
+                            android:id="@+id/yearTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toEndOf="@id/yearLabel"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/yearLabel"
+                            app:layout_constraintBottom_toBottomOf="@id/yearLabel"
+                            tools:text="2010"
+                            style="@style/AppText.Bold"
+                            android:textSize="17sp"
+                            android:layout_marginStart="@dimen/standard_content_margin"/>
+
+                        <TextView
+                            android:id="@+id/ratingLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rating:"
+                            style="@style/AppText.SemiBold"
+                            app:layout_constraintTop_toBottomOf="@id/yearTextView"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/ratingTextView"
+                            android:layout_marginTop="@dimen/standard_mid_margin"/>
+
+                        <TextView
+                            android:id="@+id/ratingTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toEndOf="@id/ratingLabel"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/ratingLabel"
+                            app:layout_constraintBottom_toBottomOf="@id/ratingLabel"
+                            tools:text="4.3"
+                            style="@style/AppText.Bold"
+                            android:textSize="17sp"
+                            android:layout_marginStart="@dimen/standard_content_margin"/>
+
+                        <TextView
+                            android:id="@+id/mileageLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Mileage:"
+                            style="@style/AppText.SemiBold"
+                            app:layout_constraintTop_toBottomOf="@id/ratingTextView"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/mileageTextView"
+                            android:layout_marginTop="@dimen/standard_mid_margin"/>
+
+                        <TextView
+                            android:id="@+id/mileageTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toEndOf="@id/mileageLabel"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/mileageLabel"
+                            app:layout_constraintBottom_toBottomOf="@id/mileageLabel"
+                            tools:text="4003Km"
+                            style="@style/AppText.Bold"
+                            android:textSize="17sp"
+                            android:layout_marginStart="@dimen/standard_content_margin"/>
+
+                        <TextView
+                            android:id="@+id/wheelTypeLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Wheel Type:"
+                            style="@style/AppText.SemiBold"
+                            app:layout_constraintTop_toBottomOf="@id/mileageTextView"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/wheelTypeTextView"
+                            android:layout_marginTop="@dimen/standard_mid_margin"/>
+
+                        <TextView
+                            android:id="@+id/wheelTypeTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toEndOf="@id/wheelTypeLabel"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/wheelTypeLabel"
+                            app:layout_constraintBottom_toBottomOf="@id/wheelTypeLabel"
+                            tools:text="4WDV"
+                            style="@style/AppText.Bold"
+                            android:textSize="17sp"
+                            android:layout_marginStart="@dimen/standard_content_margin"/>
+
+                        <TextView
+                            android:id="@+id/locationLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Location:"
+                            style="@style/AppText.SemiBold"
+                            app:layout_constraintTop_toBottomOf="@id/wheelTypeTextView"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/locationTextView"
+                            android:layout_marginTop="@dimen/standard_mid_margin"/>
+
+                        <TextView
+                            android:id="@+id/locationTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toEndOf="@id/locationLabel"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/locationLabel"
+                            tools:text="Lagos, Nigeria Lagos, Nigeria Lagos, Nigeria Lagos, Nigeria"
+                            style="@style/AppText.Bold"
+                            android:textSize="17sp"
+                            android:layout_marginStart="@dimen/standard_content_margin"/>
+
+                        <TextView
+                            android:id="@+id/transmissionLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Transmission:"
+                            style="@style/AppText.SemiBold"
+                            app:layout_constraintTop_toBottomOf="@id/locationTextView"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/transmissionTextView"
+                            android:layout_marginTop="@dimen/standard_mid_margin"/>
+
+                        <TextView
+                            android:id="@+id/transmissionTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toEndOf="@id/transmissionLabel"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/transmissionLabel"
+                            app:layout_constraintBottom_toBottomOf="@id/transmissionLabel"
+                            tools:text="Automatic"
+                            style="@style/AppText.Bold"
+                            android:textSize="17sp"
+                            android:layout_marginStart="@dimen/standard_content_margin"/>
+
+                        <TextView
+                            android:id="@+id/interiorColorLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Interior Color:"
+                            style="@style/AppText.SemiBold"
+                            app:layout_constraintTop_toBottomOf="@id/transmissionTextView"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/interiorColorTextView"
+                            android:layout_marginTop="@dimen/standard_mid_margin"/>
+
+                        <TextView
+                            android:id="@+id/interiorColorTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toEndOf="@id/interiorColorLabel"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/interiorColorLabel"
+                            app:layout_constraintBottom_toBottomOf="@id/interiorColorLabel"
+                            tools:text="Yellow"
+                            style="@style/AppText.Bold"
+                            android:textSize="17sp"
+                            android:layout_marginStart="@dimen/standard_content_margin"/>
+
+                        <TextView
+                            android:id="@+id/exteriorColorLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Exterior Color:"
+                            style="@style/AppText.SemiBold"
+                            app:layout_constraintTop_toBottomOf="@id/interiorColorTextView"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/exteriorColorTextView"
+                            android:layout_marginTop="@dimen/standard_mid_margin"/>
+
+                        <TextView
+                            android:id="@+id/exteriorColorTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toEndOf="@id/exteriorColorLabel"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/exteriorColorLabel"
+                            app:layout_constraintBottom_toBottomOf="@id/exteriorColorLabel"
+                            tools:text="Black"
+                            style="@style/AppText.Bold"
+                            android:textSize="17sp"
+                            android:layout_marginStart="@dimen/standard_content_margin"/>
+
+                        <TextView
+                            android:id="@+id/engineTypeLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Engine Type:"
+                            style="@style/AppText.SemiBold"
+                            app:layout_constraintTop_toBottomOf="@id/exteriorColorTextView"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/engineTypeTextView"
+                            android:layout_marginTop="@dimen/standard_mid_margin"/>
+
+                        <TextView
+                            android:id="@+id/engineTypeTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toEndOf="@id/engineTypeLabel"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/engineTypeLabel"
+                            app:layout_constraintBottom_toBottomOf="@id/engineTypeLabel"
+                            tools:text="8 Cylinder"
+                            style="@style/AppText.Bold"
+                            android:textSize="17sp"
+                            android:layout_marginStart="@dimen/standard_content_margin"/>
+
+                        <TextView
+                            android:id="@+id/conditionLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Condition:"
+                            style="@style/AppText.SemiBold"
+                            app:layout_constraintTop_toBottomOf="@id/engineTypeTextView"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/conditionTextView"
+                            android:layout_marginTop="@dimen/standard_mid_margin"/>
+
+                        <TextView
+                            android:id="@+id/conditionTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toEndOf="@id/conditionLabel"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/conditionLabel"
+                            app:layout_constraintBottom_toBottomOf="@id/conditionLabel"
+                            tools:text="New"
+                            style="@style/AppText.Bold"
+                            android:textSize="17sp"
+                            android:layout_marginStart="@dimen/standard_content_margin"/>
+
+                        <TextView
+                            android:id="@+id/hasWarrantyLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Has Warranty:"
+                            style="@style/AppText.SemiBold"
+                            app:layout_constraintTop_toBottomOf="@id/conditionTextView"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/hasWarrantyTextView"
+                            android:layout_marginTop="@dimen/standard_mid_margin"/>
+
+                        <TextView
+                            android:id="@+id/hasWarrantyTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toEndOf="@id/hasWarrantyLabel"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/hasWarrantyLabel"
+                            app:layout_constraintBottom_toBottomOf="@id/hasWarrantyLabel"
+                            tools:text="Yes"
+                            style="@style/AppText.Bold"
+                            android:textSize="17sp"
+                            android:layout_marginStart="@dimen/standard_content_margin"/>
+
+                        <TextView
+                            android:id="@+id/hasFinancingLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Has Financing:"
+                            style="@style/AppText.SemiBold"
+                            app:layout_constraintTop_toBottomOf="@id/hasWarrantyTextView"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/hasFinancingTextView"
+                            android:layout_marginTop="@dimen/standard_mid_margin"/>
+
+                        <TextView
+                            android:id="@+id/hasFinancingTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toEndOf="@id/hasFinancingLabel"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/hasFinancingLabel"
+                            app:layout_constraintBottom_toBottomOf="@id/hasFinancingLabel"
+                            tools:text="Yes"
+                            style="@style/AppText.Bold"
+                            android:textSize="17sp"
+                            android:layout_marginStart="@dimen/standard_content_margin"/>
+
+                        <TextView
+                            android:id="@+id/isInsuredLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Is Insured:"
+                            style="@style/AppText.SemiBold"
+                            app:layout_constraintTop_toBottomOf="@id/hasFinancingTextView"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/isInsuredTextView"
+                            android:layout_marginTop="@dimen/standard_mid_margin"/>
+
+                        <TextView
+                            android:id="@+id/isInsuredTextView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toEndOf="@id/isInsuredLabel"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/isInsuredLabel"
+                            app:layout_constraintBottom_toBottomOf="@id/isInsuredLabel"
+                            tools:text="Yes"
+                            style="@style/AppText.Bold"
+                            android:textSize="17sp"
+                            android:layout_marginStart="@dimen/standard_content_margin"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
                 </androidx.cardview.widget.CardView>
 

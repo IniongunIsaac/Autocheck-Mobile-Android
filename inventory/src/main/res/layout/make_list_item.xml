@@ -14,7 +14,7 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="150dp"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:padding="@dimen/standard_mid_margin"
         android:clickable="true"
@@ -27,6 +27,7 @@
             android:layout_height="80dp"
             app:placeholderImage="@drawable/placeholder_image"
             app:roundAsCircle="true"
+            app:image="@{ make.imageUrl }"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -38,7 +39,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/makeImageView"
             android:layout_marginTop="@dimen/standard_mid_margin"
-            android:text=""
+            android:text="@{ make.name }"
             tools:text="Mercedes-Benz Mercedes-Benz"
             android:gravity="center"
             style="@style/AppText"

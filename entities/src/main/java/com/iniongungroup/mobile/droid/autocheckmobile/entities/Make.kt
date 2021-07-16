@@ -4,4 +4,4 @@ data class Make(
     val id: Int,
     val name: String,
     val imageUrl: String
-)
+): BaseEntity()

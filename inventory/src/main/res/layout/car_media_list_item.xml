@@ -14,19 +14,21 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="120dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:paddingRight="@dimen/standard_content_margin_24"
         android:clickable="true"
         android:focusable="true"
-        android:background="?android:attr/selectableItemBackground">
+        android:background="?android:attr/selectableItemBackground"
+        android:onClick="@{ () -> viewModel.handleCarMediaClicked(media)}">
 
         <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/makeImageView"
             android:layout_width="match_parent"
             android:layout_height="70dp"
             app:placeholderImage="@drawable/placeholder_image"
-            app:roundedCornerRadius="15dp"
+            app:roundedCornerRadius="10dp"
+            app:image="@{ media.imageURL }"
+            android:padding="@dimen/standard_mid_margin"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

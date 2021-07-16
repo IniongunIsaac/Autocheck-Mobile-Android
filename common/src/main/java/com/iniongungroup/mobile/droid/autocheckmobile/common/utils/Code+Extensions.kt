@@ -46,8 +46,10 @@ fun Any?.isNotNull(): Boolean {
 }
 
 fun Number.currencyFormatted(): String {
-    val format = NumberFormat.getCurrencyInstance()
+    val format = NumberFormat.getCurrencyInstance(Locale("en", "NG"))
     format.maximumFractionDigits = 0
     format.currency = Currency.getInstance("NGN")
-    return format.format(this).replace("NGN", "")
+    return format.format(this).replace("NGN", "₦")
 }
+
+fun Number.formatted(decimalPlaces: Int = 2) = String.format("%.${decimalPlaces}f", this)

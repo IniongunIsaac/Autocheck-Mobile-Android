@@ -19,7 +19,8 @@
         android:clickable="true"
         android:focusable="true"
         android:background="?android:attr/selectableItemBackground"
-        android:paddingBottom="@dimen/standard_content_margin_24">
+        android:paddingBottom="@dimen/standard_content_margin_24"
+        android:onClick="@{ () -> viewModel.getCarDetailsAndMedia(car.id) }">
 
         <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/carImageView"
@@ -32,7 +33,8 @@
             app:layout_constraintEnd_toEndOf="@id/contentCardView"
             android:layout_marginStart="@dimen/standard_content_margin_24"
             android:layout_marginEnd="@dimen/standard_content_margin_24"
-            android:translationZ="3dp"/>
+            android:translationZ="3dp"
+            app:image="@{ car.imageUrl }"/>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/contentCardView"
@@ -57,7 +59,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/ratingTextView"
                     android:layout_marginTop="130dp"
-                    android:text=""
+                    android:text="@{ car.title }"
                     tools:text="Nissan Armada"
                     style="@style/AppText.Bold"
                     android:textSize="19sp"/>
@@ -73,6 +75,7 @@
                     app:layout_constraintTop_toTopOf="@id/carNameTextView"
                     app:layout_constraintBottom_toBottomOf="@id/carNameTextView"
                     tools:text="(4.3)"
+                    app:text="@{ car.gradeScore }"
                     android:gravity="center"
                     style="@style/AppText.Bold"
                     android:textColor="@color/faint_text_color"/>
@@ -84,7 +87,7 @@
                     app:layout_constraintTop_toBottomOf="@id/carNameTextView"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:text=""
+                    app:text="@{ car.year }"
                     tools:text="2010"
                     style="@style/AppText.Bold"
                     android:textSize="18sp"
@@ -98,7 +101,7 @@
                     app:layout_constraintTop_toBottomOf="@id/carYearTextView"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/addButton"
-                    android:text=""
+                    android:text="@{ car.priceString }"
                     tools:text="N2,000,000"
                     style="@style/AppText.Bold"
                     android:textSize="18sp"

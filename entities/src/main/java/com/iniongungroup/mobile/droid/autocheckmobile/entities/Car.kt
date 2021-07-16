@@ -23,4 +23,7 @@ data class Car(
     val bodyTypeId: String,
     val sold: Boolean,
     val hasThreeDImage: Boolean
-)
+): BaseEntity() {
+    val priceString: String
+        get() = marketplacePrice.currencyFormatted()
+}

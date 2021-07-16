@@ -7,4 +7,7 @@ data class CarMedia(
     val createdAt: String?,
     val type: String?,
     val id: Int?
-)
+): BaseEntity() {
+    val imageURL: String
+        get() = url ?: ""
+}
