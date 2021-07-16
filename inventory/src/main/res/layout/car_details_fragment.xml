@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
         <variable
@@ -9,7 +11,145 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/app_bg">
+
+        <include layout="@layout/guidelines_layout" />
+
+        <ImageView
+            android:id="@+id/backImageView"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            app:layout_constraintEnd_toStartOf="@+id/imageView"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="@id/startGuideline"
+            app:layout_constraintTop_toBottomOf="@id/topGuideline"
+            app:srcCompat="@drawable/ic_round_arrow_back_24"
+            android:tint="@color/textColorPrimary"/>
+
+        <TextView
+            android:id="@+id/carDetailsTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Car Details"
+            android:fontFamily="@font/nunito_semi_bold"
+            android:textSize="22dp"
+            style="@style/AppText.SemiBold"
+            app:layout_constraintBottom_toBottomOf="@id/backImageView"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/backImageView"
+            app:layout_constraintEnd_toStartOf="@id/cartImageView"
+            app:layout_constraintTop_toTopOf="@id/backImageView"
+            android:layout_marginStart="@dimen/standard_content_margin"
+            android:layout_marginEnd="@dimen/standard_content_margin" />
+
+        <ImageView
+            android:id="@+id/cartImageView"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            app:layout_constraintBottom_toBottomOf="@id/backImageView"
+            app:layout_constraintEnd_toEndOf="@id/endGuideline"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/carDetailsTextView"
+            app:layout_constraintTop_toTopOf="@id/backImageView"
+            app:srcCompat="@drawable/shopping_icon" />
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/backImageView"
+            app:layout_constraintStart_toStartOf="@id/startGuideline"
+            app:layout_constraintEnd_toEndOf="@+id/endGuideline"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="@dimen/standard_content_margin">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/carNameTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:text=""
+                    tools:text="Nissan Armada"
+                    style="@style/AppText.Bold"
+                    android:textSize="25sp"/>
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/carImageView"
+                    android:layout_width="0dp"
+                    android:layout_height="220dp"
+                    app:placeholderImage="@drawable/placeholder_image"
+                    app:roundedCornerRadius="25dp"
+                    android:layout_marginTop="@dimen/standard_content_margin_24"
+                    app:layout_constraintTop_toBottomOf="@id/carNameTextView"
+                    app:layout_constraintStart_toStartOf="@id/mediaCardView"
+                    app:layout_constraintEnd_toEndOf="@id/mediaCardView"
+                    android:layout_marginStart="@dimen/standard_content_margin_24"
+                    android:layout_marginEnd="@dimen/standard_content_margin_24"
+                    android:translationZ="3dp"/>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/mediaCardView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/carNameTextView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:cardCornerRadius="15dp"
+                    android:layout_marginTop="80dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/standard_content_margin_24">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/mediaRecyclerView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            android:orientation="horizontal"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:layout_marginTop="170dp"
+                            tools:listitem="@layout/car_media_list_item" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/carDetailsCardView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/mediaCardView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:cardCornerRadius="15dp"
+                    android:layout_marginTop="@dimen/standard_content_margin_32">
+
+                    <TextView
+                        android:id="@+id/detailsTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/standard_content_margin_24"
+                        tools:text="@string/lorem"/>
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>

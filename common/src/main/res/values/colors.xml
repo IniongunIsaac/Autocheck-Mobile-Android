@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <color name="colorPrimary">#3B81FF</color>
-    <color name="colorPrimaryDark">#CB3B81FF</color>
-    <color name="colorAccent">#F68C04</color>
+    <color name="colorPrimary">#0A1133</color>
+    <color name="colorPrimaryDark">#DA0A1133</color>
+    <color name="colorAccent">#FFC107</color>
     <color name="colorPrimaryLight">#34135ED1</color>
 
     <!--    Override Material TextInputLayout Default Border Color-->
@@ -11,6 +11,7 @@
 
     <color name="faint_text_color">#6D7278</color>
     <color name="black">#000</color>
+    <color name="black_alt">#CD000000</color>
     <color name="white">#fff</color>
 
     <color name="red">#E57373</color>

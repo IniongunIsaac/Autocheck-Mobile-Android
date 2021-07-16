@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <solid android:color="@color/card_bg"/>
-    <corners android:radius="30dp"/>
-    <size android:height="45dp"/>
-    <padding android:left="30dp" android:right="30dp"/>
+    <corners android:radius="10dp"/>
+    <size android:height="55dp"/>
+    <padding android:left="15dp" android:right="15dp"/>
 </shape>

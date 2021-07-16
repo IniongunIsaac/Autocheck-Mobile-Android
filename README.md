@@ -1,4 +1,4 @@
-## News App
+## Autocheck Mobile
 
 An iOS application that displays automobiles.
 
