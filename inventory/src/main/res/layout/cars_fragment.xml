@@ -135,6 +135,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     android:layout_marginTop="@dimen/standard_content_margin_32"
+
                     tools:listitem="@layout/car_list_item" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,7 @@ import android.graphics.drawable.Drawable
 import android.view.View
 import android.view.View.INVISIBLE
 import android.view.View.VISIBLE
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
@@ -12,7 +13,11 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
+import coil.ImageLoader
+import coil.decode.SvgDecoder
+import coil.request.ImageRequest
 import com.facebook.drawee.view.SimpleDraweeView
+import com.iniongungroup.mobile.droid.autocheckmobile.common.R
 import com.iniongungroup.mobile.droid.autocheckmobile.common.utils.formatted
 
 @BindingAdapter("app:image")
@@ -23,6 +28,21 @@ fun setImage(imageView: AppCompatImageView, @DrawableRes imageRes: Int) {
 @BindingAdapter("app:image")
 fun setImage(imageView: SimpleDraweeView, imageUrl: String) {
     imageView.setImageURI(imageUrl)
+}
+
+@BindingAdapter("app:image")
+fun ImageView.setImage(imageUrl: String) {
+    val request = ImageRequest.Builder(context)
+        .data(imageUrl)
+        .target(this)
+        .placeholder(R.drawable.placeholder_image)
+        .build()
+    ImageLoader.Builder(context)
+        .componentRegistry {
+            add(SvgDecoder(context))
+        }
+        .build()
+        .enqueue(request)
 }
 
 @BindingAdapter("app:text")

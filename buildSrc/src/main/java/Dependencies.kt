@@ -200,6 +200,8 @@ object Dependencies {
     const val glideAnnotationProcessor = "com.github.bumptech.glide:compiler:${DepVersions.glide}"
     const val paystack = "co.paystack.android:paystack:3.1.2"
     const val rangeDatePicker = "com.andrewjapar.rangedatepicker:rangedatepicker:0.3"
+    const val coil = "io.coil-kt:coil:1.3.0"
+    const val coilSVG = "io.coil-kt:coil-svg:1.3.0"
 
     //Testing
     const val junit = "junit:junit:${DepVersions.juint}"

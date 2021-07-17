@@ -2,6 +2,7 @@ package com.iniongungroup.mobile.droid.autocheckmobile.inventory.fragments
 
 import android.os.Bundle
 import android.view.View
+import androidx.recyclerview.widget.RecyclerView
 import com.iniongungroup.mobile.droid.autocheckmobile.common.adapters.BaseListAdapter
 import com.iniongungroup.mobile.droid.autocheckmobile.common.base.BaseFragment
 import com.iniongungroup.mobile.droid.autocheckmobile.common.utils.livedataevent.LiveDataEventObserver
@@ -55,6 +56,17 @@ class CarsFragment : BaseFragment<CarsFragmentBinding, InventoryViewModel>() {
     private fun setupCarsAndMakesRecyclerViews() {
         with(binding) {
             makesRecyclerView.adapter = makesAdapter
+
+            carsRecyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+
+                override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                    super.onScrollStateChanged(recyclerView, newState)
+
+                    if (!recyclerView.canScrollVertically(1) && newState == RecyclerView.SCROLL_STATE_IDLE) {}
+                      //  inventoryViewModel.getMoreCars()
+                }
+
+            })
             carsRecyclerView.adapter = carsAdapter
         }
     }
@@ -63,12 +75,19 @@ class CarsFragment : BaseFragment<CarsFragmentBinding, InventoryViewModel>() {
         super.setViewModelObservers()
         observeCarsAndMakes()
         observeShowCarDetails()
+        observeCars()
     }
 
     private fun observeCarsAndMakes() {
         inventoryViewModel.carsAndMakes.observe(this, {
             makesAdapter.submitList(it.second)
             carsAdapter.submitList(it.first)
+        })
+    }
+
+    private fun observeCars() {
+        inventoryViewModel.cars.observe(this, {
+            carsAdapter.submitList(it)
         })
     }
 

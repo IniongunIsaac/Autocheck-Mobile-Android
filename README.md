@@ -11,13 +11,14 @@ An iOS application that displays automobiles.
 The application is built using the following:
 
 * Kotlin
+* Multi-module architecture
 * MVVM with Repository Pattern
 * LiveData
 * ViewModel
 * RxJava/RxKotlin
 * Dagger2
 * Navigation Component
-* Android Studio 4.0
+* Android Studio 4.x
 
 ### How to run(installation):
 
@@ -26,8 +27,9 @@ The application is built using the following:
 * Build and run the project on the Emulator or any physically connected Android device.
     
 ## Screenshots
-[<img src="/media/screenshot_1.png" align="center" width ="22%" hspace="0" vspace="10">](/media/screenshot_1.png)
-[<img src="/media/screenshot_2.png" align="center" width ="22%" hspace="0" vspace="10">](/media/screenshot_2.png)
+[<img src="/media/list.jpg" align="center" width ="22%" hspace="0" vspace="10">](/media/list.jpg)
+[<img src="/media/details_1.jpg" align="center" width ="22%" hspace="0" vspace="10">](/media/details_1.jpg)
+[<img src="/media/details_2.jpg" align="center" width ="22%" hspace="0" vspace="10">](/media/details_2.jpg)
 
 ## License
 <p align="center"><pre><code>MIT License

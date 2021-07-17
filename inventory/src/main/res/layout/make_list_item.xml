@@ -21,16 +21,33 @@
         android:focusable="true"
         android:background="?android:attr/selectableItemBackground">
 
-        <com.facebook.drawee.view.SimpleDraweeView
+<!--        <com.facebook.drawee.view.SimpleDraweeView-->
+<!--            android:id="@+id/makeImageView"-->
+<!--            android:layout_width="80dp"-->
+<!--            android:layout_height="80dp"-->
+<!--            app:placeholderImage="@drawable/placeholder_image"-->
+<!--            app:roundAsCircle="true"-->
+<!--            app:image="@{ make.imageUrl }"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+        <androidx.cardview.widget.CardView
             android:id="@+id/makeImageView"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            app:placeholderImage="@drawable/placeholder_image"
-            app:roundAsCircle="true"
-            app:image="@{ make.imageUrl }"
+            app:cardCornerRadius="40dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/placeholder_image"
+                app:image="@{ make.imageUrl }" />
+
+        </androidx.cardview.widget.CardView>
 
         <TextView
             android:layout_width="wrap_content"

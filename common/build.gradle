@@ -33,6 +33,8 @@ dependencies {
             Dependencies.retrofit,
             Dependencies.gson,
             Dependencies.fresco,
+            Dependencies.coil,
+            Dependencies.coilSVG,
 
             Dependencies.dagger,
             Dependencies.daggerAndroidSupport,

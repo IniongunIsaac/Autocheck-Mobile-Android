@@ -59,7 +59,7 @@ class CarDetailsFragment : BaseFragment<CarDetailsFragmentBinding, InventoryView
         with(inventoryViewModel.carDetailsAndMedia.first) {
             with(binding){
                 carImageView.setImageURI(imageUrl)
-                carNameTextView.text = model.name
+                carNameTextView.text = model.make.name
                 sellingPriceTextView.text = price.currencyFormatted()
                 marketPriceTextView.text = marketplacePrice.currencyFormatted()
                 installmentTextView.text = installment.currencyFormatted()
